@@ -22,8 +22,15 @@ class Login extends CI_Controller {
     		$data['msg'] = "wrong username or password";
     		$this->load->view('login',$data);
     	}
-    	
-
-
+	}
+	public function logica()
+	{
+        $step = json_decode($this->input->post('step'));
+        if($step == 1)
+        {
+            $k = rand(0,4);
+            $arr = array(1,3,5,7,9);
+            echo json_encode($arr[$k]);
+        }
 	}
 }
